@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="script.js" defer></script>
+
+  <link rel="icon" href="https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/plant-nursery-logo-template-lt8qc346cb8484.webp" sizes="48x48" type="image/svg+xml" >
+
+
+</head>
+<style>
+  footer {
+    background-color: #333;
+    color: white;
+    opacity: 0.9;
+    padding-right: 0px;
+
+
+}
+
+/* Footer Content Layout */
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Quick Links Section */
+
+.footer-content .quick-links h2 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-content .quick-links ul {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-content .quick-links ul li {
+    margin: 0;
+}
+
+.footer-content .quick-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    /* Space between links */
+}
+
+.footer-content .quick-links ul li a:hover {
+    color: #f0a500;
+}
+
+/* Follow Us Section */
+
+.footer-content .follow-us {
+    padding-top: 12px;
+
+}
+
+.footer-content .follow-us a {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-content .follow-us a:hover {
+    color: #f0a500;
+}
+
+/* Footer Bottom (Copyright and Designed Through) */
+.footer-bottom {
+    /* float: right; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    /* margin-right: 10px; */
+    flex-wrap: wrap;
+    /* Allow wrapping for small screens */
+}
+
+/* Center the copyright text */
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-right {
+    display: flex;
+    text-align: center;
+}
+
+/* Right-aligned "Designed Through" text */
+
+.footer-bottom p {
+    text-align: center;
+
+    margin: 5px 0;
+
+}
+
+.footer-bottom .product-by-visys {
+    font-size: 0.5rem;
+    opacity: 0.3;
+
+}
+
+/* Ensure the footer content is responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        /* Stack sections vertically on smaller screens */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-center {
+        margin-bottom: 10px;
+    }
+
+    .footer-right {
+        margin-top: 10px;
+    }
+}
+
+  .whatsapp-chat-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    /* Ensures it's a perfect circle */
+    font-size: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    /* Set width */
+    height: 60px;
+    /* Set height */
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .whatsapp-chat-btn:hover {
+    background-color: #128C7E;
+  }
+
+  /* Icon inside the button */
+  .whatsapp-chat-btn i {
+    margin: 0;
+    font-size: 30px;
+    /* Ensures the icon fits inside the circle */
+  }
+  .contact-section {
+    background-color: #FEF8F4;
+    color: black;
+  }
+  
+  .contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem 20px;
+  }
+  
+  .contact-card {
+    background: #FEF8F4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 450px;
+    text-align: center;
+  }
+  .contact-card .btn {
+    background: #F76C2F;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .contact-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-card {
+        width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-card h2, .google-map h2 {
+      font-size: 1.25rem; /* Slightly smaller headings */
+    }
+    
+    .info-item i {
+      font-size: 1.2rem; /* Smaller icons */
+      margin-right: 0.8rem;
+    }
+    
+    .info-item p {
+      font-size: 0.9rem; /* Adjust text size for readability */
+    }
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+    }
+    
+    .form-group button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .form-group button:hover {
+      background-color: #005bb5;
+    }
+    
+    .form-group button:active {
+      background-color: #004a8a;
+    }
+    
+    /* Thank You Message */
+    .thank-you-message {
+      display: none;
+      text-align: center;
+      font-size: 18px;
+      color: #4CAF50;
+      padding: 20px;
+    }
+    
+    /* Popup styles */
+    #contactpopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .popup-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+    }
+    
+    /* Close button (cross mark) */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .close-btn:hover {
+      color: red;
+    }
+    
+    /* Button to select date */
+    #datePickerButton {
+      background-color:blue;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    #datePickerButton:hover {
+      background-color:blue;
+    }
+    
+    /* Text input for hidden date selection */
+    #popup input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      display: none;
+    }
+    
+    /* Text input for email address */
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    /* Textarea */
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    /* Submit button */
+    button[type="submit"] {
+      background-color:blue;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    button[type="submit"]:hover {
+      background-color:blue;
+    }
+    
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .filter-item {
+      min-height: 400px; /* Adjust as per the desired height */
+    }
+    
+    .product-card img {
+      height: 280px; /* Fix image height */
+      width: 100%;
+      object-fit: fill; /* Keeps the aspect ratio */
+    }
+    .payment-section {
+      background-color: #FEF8F4;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+  
+  }
+  
+  .payment-section>h2 {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      padding-bottom: 25px;
+  }
+  
+  .payment-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+  }
+  
+  .qr-code-section,
+  .payment-info {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  
+  .qr-code-section {
+      background: #f7fafc;
+      border-right: 2px solid #e0e6ed;
+  }
+  
+  .qr-code-section h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+  }
+  
+  .qr-code-section .qr-code {
+      width: 180px;
+      max-width: 300px;
+      border: 4px solid #e0e6ed;
+      border-radius: 12px;
+      margin-bottom: 15px;
+  }
+  
+  .qr-code-section p {
+      font-size: 16px;
+      color: #666;
+  }
+  
+  .payment-info {
+      padding: 20px;
+      background: #fff;
+  }
+  
+  .payment-info h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+  }
+  
+  .payment-info ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .payment-info ul li {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+  }
+  
+  .payment-info ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #007bff;
+      font-size: 20px;
+  }
+  
+  .payment-methods h3 {
+      font-size: 20px;
+      margin: 20px 0 15px;
+      color: #333;
+  }
+  
+  .method-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+  }
+  
+  .method-icons .icon {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease;
+  }
+  
+  .method-icons .icon:hover {
+      transform: scale(1.1);
+  }
+  
+  @media screen and (max-width: 768px) {
+      .payment-container {
+          flex-direction: column;
+      }
+  
+      .qr-code-section {
+          border-right: none;
+          border-bottom: 2px solid #e0e6ed;
+          padding-bottom: 20px;
+      }
+  
+      .qr-code-section .qr-code {
+          width: 140px;
+          height: 140px;
+      }
+  
+      .method-icons .icon {
+          width: 40px;
+          height: 40px;
+      }
+  }
+  
+</style>
+
+<body>
+  <main>
+    <nav class="navbar bg-amber-300 shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo Section -->
+          <a href="#" class="navbar-brand flex items-center">
+            <img src="https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/plant-nursery-logo-template-lt8qc346cb8484.webp" 
+              alt="Logo" class="w-12 h-12 rounded-full">
+            <span class="ml-2 text-xl font-bold text-gray-800">Nursery</span>
+          </a>
+    
+          <!-- Mobile Menu Toggle -->
+          <button class="lg:hidden text-gray-800 focus:outline-none" id="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+    
+          <!-- Menu Items -->
+          <div class="hidden lg:flex space-x-6 items-center" id="menu">
+            <a href="#home" class="nav-link text-gray-800 font-bold hover:text-blue-600" id="#home">Home</a>
+            <a href="#about" class="nav-link text-gray-800 font-bold hover:text-blue-600">About Us</a>
+            <a href="#products" class="nav-link text-gray-800 font-bold hover:text-blue-600">Products</a>
+            <a href="#gallery" class="nav-link text-gray-800 font-bold hover:text-blue-600">Gallery</a>
+            <a href="#payments" class="nav-link text-gray-800 font-bold hover:text-blue-600">Payments</a>
+            <a href="#contact" class="nav-link text-gray-800 font-bold hover:text-blue-600">Contact Us</a>
+            <a href="#schedule" class="nav-link text-gray-800 font-bold hover:text-blue-600" id="#nav-item-schedule" onclick="openPopup()">Schedule</a>
+    
+            <!-- Desktop Language Select -->
+            <select id="languageSelect"
+              class="bg-gray-100 border border-black font-semibold rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+              <option value="en">English</option>
+              <option value="te">Telugu</option>
+              <option value="hi">Hindi</option>
+              <option value="ur">Urdu</option>
+              <option value="sa">Sanskrit</option>
+            </select>
+          </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div class="hidden lg:hidden flex flex-col space-y-4 mt-4" id="mobile-menu">
+          <a href="#home" class="nav-link text-gray-800 hover:text-blue-600">Home</a>
+          <a href="#about" class="nav-link text-gray-800 hover:text-blue-600">About Us</a>
+          <a href="#products" class="nav-link text-gray-800 hover:text-blue-600">Products</a>
+          <a href="#gallery" class="nav-link text-gray-800 hover:text-blue-600" id="nav-item-gallery">Gallery</a>
+          <a href="#payments" class="nav-link text-gray-800 hover:text-blue-600">Payments</a>
+          <a href="#contact" class="nav-link text-gray-800 hover:text-blue-600">Contact Us</a>
+          <a href="#schedule" class="nav-link text-gray-800 hover:text-blue-600" id="#nav-item-schedule" onclick="openPopup()">Schedule</a>
+    
+          <!-- Mobile Language Select -->
+          <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg overflow-hidden">
+            <select id="mobileLanguageSelect"
+              class="block w-full  sm:max-96 md:max-w-sm lg:max-w-md bg-gray-100 border border-black font-semibold rounded-lg px-4 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none">
+              <option value="en">English</option>
+              <option value="te">Telugu</option>
+              <option value="hi">Hindi</option>
+              <option value="ur">Urdu</option>
+              <option value="sa">Sanskrit</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <header id="home" class="hero relative bg-cover bg-center text-white min-h-screen flex items-center justify-center"
+      style="background-image: url('https://www.heartyculturenursery.com/cdn/shop/files/Untitled_design_2_1080x1080_crop_center.jpg?v=1691581377');">
+      <div class="bg-black bg-opacity-50 w-full h-full absolute inset-0"></div> <!-- Semi-transparent overlay -->
+      <div class="relative z-10 text-center px-4 sm:px-8 md:px-16">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+          Welcome To Nursery
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          Give your kitchen - and your life - a stylish upgrade! Check out our range
+          of chic and practical kitchen accessories today.
+        </p>
+        <a href="#contact"
+          class="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
+          Contact Us
+        </a>
+      </div>
+    </header>
+    <section id="about" class="py-20 bg-green-100">
+      <div class="container mx-auto px-6 lg:px-16">
+        <!-- Section Heading -->
+        <h2 class="text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-12 tracking-tight leading-tight">
+          About Us
+        </h2>
+
+        <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-16">
+          <!-- About Image (First Div) -->
+          <div
+            class=" about-image relative w-full lg:w-2/5 rounded-lg overflow-hidden bg-green-100 p-6 shadow-lg border-4 border-gray-300  ease-in-out transform hover:scale-105"
+            data-aos="zoom-in" data-aos-duration="1200">
+            <img
+              src="https://www.heartyculturenursery.com/cdn/shop/files/infographic4_1688x659_crop_center.png?v=1614351338"
+              alt="About Us" class="w-full h-72 object-contain rounded-lg transition duration-500 ease-in-out" />
+            <!-- Decorative Overlay -->
+            <div class="absolute inset-0 bg-black opacity-25 rounded-lg object-cover"></div>
+          </div>
+
+
+          <!-- About Text (Second Div) -->
+          <div class="about-text lg:w-3/5 bg-green-100 p-6 rounded-lg shadow-lg" data-aos="fade-left" data-aos-duration="1000"
+            data-aos-delay="300">
+            <p class="text-lg font-medium transition-all duration-500 ease-in-out hover:text-blue-600">
+              We absolutely love making your time in the kitchen a breeze and a joy! Our collection of
+              handpicked kitchen accessories is designed to combine functionality with elegance,
+              ensuring a stylish upgrade to your cooking space. From sleek organizers to multi-functional tools, our mission is to simplify your
+              culinary adventures while adding beauty to your kitchen. Whether you're a passionate chef or
+              cooking for loved ones, we've got you covered.
+              From sleek organizers to multi-functional tools, our mission is to simplify your
+              culinary adventures while adding beauty to your kitchen. Whether you're a passionate chef or
+              cooking for loved ones, we've got you covered.
+
+            </p>
+             
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="products py-10 " id="products">
+      <h2 class="text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-12 tracking-tight leading-tight">
+        Products
+      </h2>
+
+      <div class="product-container container mx-auto px-6 lg:px-16">
+        <!-- Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8 ">
+          <button class="filter-btn px-4 py-2 rounded-full bg-green-600 text-white font-semibold hover:bg-blue-700 "
+            data-filter="all">All</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300"
+            data-filter="plants">Plants</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300"
+            data-filter="seeds">Seeds</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300"
+            data-filter="fertilizers">Fertilizers</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300"
+            data-filter="bulbs">Bulbs</button>
+        </div>
+
+        <!-- Image Grid -->
+        <div id="image-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Example Items -->
+          <div class="filter-item plants bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="product-card w-full">
+              <img
+                src="https://nurserylive.com/cdn/shop/files/nurserylive-home-page-miniature-gardens_ccf96d85-dcc2-4da8-b932-8b43a6eccbae_643x545.jpg?v=1633892191"
+                alt="Plant" class="w-full">
+            </div>
+            <div class="p-4">
+              <p class="text-lg font-bold text-gray-600 mb-4">Tag: Plants</p>
+            </div>
+          </div>
+
+          <div class="filter-item seeds bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="product-card w-full">
+              <img
+                src="https://nurserylive.com/cdn/shop/files/nurserylive-home-page-soil-and-fertilizers_ee17c551-750c-46ff-a546-45f9c6835abc_1210x600.jpg?v=1633894835"
+                alt="Seeds" class="w-full ">
+            </div>
+            <div class="p-4">
+              <p class="text-lg font-bold text-gray-600 mb-4">Tag: Seeds</p>
+            </div>
+          </div>
+
+          <div class="filter-item fertilizers bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class=" product-card w-full">
+              <img
+                src="https://nurserylive.com/cdn/shop/products/nurserylive-combo-packs-plants-pack-of-3-good-luck-jade-plants-in-ceramic-pots-16969154297996_600x600.jpg?v=1634225377"
+                alt="Fertilizers" class="w-full ">
+            </div>
+            <div class="p-4">
+              <p class="text-lg font-bold text-gray-600 mb-4">Tag: Fertilizers</p>
+            </div>
+          </div>
+
+          <div class="filter-item bulbs bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class=" product-card w-full">
+              <img
+                src="https://nurserylive.com/cdn/shop/files/nurserylive-home-page-gift_223a0267-5e95-413f-9c5a-52dafe5b34ef_1140x737.jpg?v=1633892191"
+                alt="Bulbs" class="w-full">
+            </div>
+            <div class="p-4">
+              <p class="text-lg font-bold text-gray-600 mb-4">Tag: Bulbs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+    <section class=" gallery-section py-12 bg-green-100" id="gallery">
+      <div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-12 tracking-tight leading-tight" id="gallery">
+          Gallery
+        </h2>
+      </div>
+      <section class="flex flex-wrap justify-center gap-8 items-center px-4">
+        <!-- Left Column -->
+        <div class="flex gap-4 flex-wrap sm:flex-nowrap">
+          <div>
+            <img src="./images/product_2.jpg" 
+                 alt="Product 1" 
+                 class="w-40 sm:w-52 h-60 sm:h-80 object-cover rounded-lg shadow-lg">
+          </div>
+          <div>
+            <img src="./images/product_3.jpg" 
+                 alt="Product 2" 
+                 class="w-40 sm:w-52 h-60 sm:h-80 object-cover rounded-lg shadow-lg">
+          </div>
+        </div>
+    
+        <!-- Center Column -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <img src="/images/product_2.jpg" 
+                 alt="Product 3" 
+                 class="w-full sm:w-96 h-36 object-cover rounded-lg shadow-lg">
+          </div>
+          <div>
+            <img src="/images/product_2.jpg" 
+                 alt="Product 4" 
+                 class="w-full sm:w-96 h-36 object-cover rounded-lg shadow-lg">
+          </div>
+        </div>
+    
+        <!-- Right Column -->
+        <div class="flex gap-4 flex-wrap sm:flex-nowrap">
+          <div>
+            <img src="./images/product_2.jpg" 
+                 alt="Product 5" 
+                 class="w-62 sm:w-64 h-60 sm:h-80 object-cover rounded-lg shadow-lg">
+          </div>
+        </div>
+        
+      </section>
+    </section>
+   
+    <h2 class="contact text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-12 tracking-tight leading-tight" id="contact">
+      Contact Us
+
+    </h2>
+    <section id="contact" class="contact-section">
+      <div class="contact-section">
+        <div class="contact-card contact-info">
+            <h2>Contact Information</h2>
+            <div class="info-item">
+                <i class="fas fa-user icon"></i>
+                <p>Name: <span id="contact-name"> Aswini U</span></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope icon"></i>
+                <p>Email: <span id="contact-email">aswinitej27@gmail.com</span></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt icon"></i>
+                <p>Phone: <span id="contact-phone">9381254299</span></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt icon"></i>
+                <p>Address: <span id="contact-address"> Ameerpet, HYD,,500081</span></p>
+
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock icon"></i>
+                <p>Working Days: <span id="contact-days">Monday-Friday</span></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock icon"></i>
+                <p>Working Hours: <span id="contact-hours">9-7</span></p>
+            </div>
+      <a onclick="contactOpenPopup()" class="btn">Connect With Us</a>
+        </div>
+  <div class="contact-card">
+            <h2 id="map-content">View on google map</h2>
+            <a href="https://www.google.com/maps?q=17.4413,78.4487&z=15" target="_blank">
+              <img src="images/map.png" 
+                  alt="Map" width="100%" height="auto">
+            </a>
+        </div>
+    </div>
+    </section>
+
+
+
+<!-- Contact Form Popup Modal -->
+<div id="contactpopup">
+  <div class="popup-content">
+      <button class="close-btn" onclick="contactClosePopup()">X</button>
+      <h2>Contact Us</h2>
+      <form id="contactForm" action="https://formsubmit.co/aswinitej27@gmail.com" method="POST" target="hidden_iframe" onsubmit="contactHandleSubmit(event)">
+          <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+          </div>
+
+          <!-- Hidden field to store the dynamic redirection URL -->
+          
+
+          <div class="form-group">
+              <button type="submit">Send Message</button>
+          </div>
+      </form>
+      <div class="thank-you-message" id="contactThankYouMessage">Thank you for contacting us! We'll get back to you soon.</div>
+  </div>
+</div>
+
+<!-- Contact Form Popup Modal -->
+<div id="popup">
+<div class="popup-content">
+    <!-- Close button (X) to close the popup -->
+    <button class="close-btn" onclick="closePopup()">X</button>
+
+    <h2>Schedule Your Appointment</h2>
+
+    <!-- Button to open the calendar -->
+    <button id="datePickerButton">Select Appointment Date</button>
+
+    <!-- Hidden input field to store the selected date -->
+    <input type="text" id="appointmentDate" name="appointment_date" class="appointment-date">
+
+    <!-- Simple form to send the email using Formsubmit -->
+    <form id="emailForm" action="https://formsubmit.co/aswinitej27@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+        <!-- Email input -->
+        <input type="email" name="email" id="emailField" placeholder="Your Email Address" required>
+
+        <!-- Hidden field for appointment date -->
+        <input type="hidden" name="appointment_date" id="appointmentDateField">
+
+        <!-- Message textarea -->
+        <textarea id="emailBody" name="message" rows="4" cols="50" placeholder="Enter your email content..." required></textarea>
+
+        <!-- Hidden redirect URL (this will be passed as query parameter) -->
+        
+
+        <div class="form-group">
+            <button type="submit">Send Mail</button>
+        </div>
+    </form>
+
+    <!-- Thank you message -->
+    <div class="thank-you-message" id="thankYouMessage">Thank you for scheduling your appointment! We’ll be in touch soon.</div>
+</div>
+</div>
+
+
+
+<section class="bg-white py-16 px-4 md:px-16 lg:px-24">
+  <!-- Section Header -->
+  <div class="text-center mb-12" data-aos="fade-up" id="payments">
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-12 tracking-tight leading-tight" id="payments-header">
+      Payments
+    </h2>
+    <p class="text-gray-600 leading-relaxed" id="payment-description">
+      Choose a plan and make payments quickly with QR scanning.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <!-- Card 1: Basic Plan -->
+    <div class="plan-card relative overflow-hidden rounded-lg shadow-lg bg-green-100 p-6 transform transition-transform duration-300" data-aos="fade-up" data-aos-delay="100" id="basic-plan">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4" id="basic-plan-title">
+        Basic Nursery Plan
+      </h3>
+      <p class="text-gray-600 mb-6" id="basic-plan-description">
+        Perfect for new parents looking to get started with nursery essentials.
+      </p>
+      <ul class="text-gray-700 mb-6 space-y-2" id="basic-ul">
+        <li id="basic-f">✔ Access to Nursery plant care guides</li>
+        <li id="basic-s">✔ Weekly plant care tips</li>
+        <li id="basic-t">✔ Community support for new parents</li>
+      </ul>
+      <div class="text-center mt-auto">
+        <p class="text-4xl font-bold text-green-600 mb-4" id="basic-price">
+          $10/month
+        </p>
+        <button class="btn-pay bg-green-500 text-white px-6 py-3 rounded-lg shadow-md transition-colors duration-300">
+          Pay Now
+        </button>
+      </div>
+    </div>
+  
+    <!-- Card 2: Pro Plan -->
+    <div class="plan-card relative overflow-hidden rounded-lg shadow-lg bg-green-200 p-6 transform transition-transform duration-300" data-aos="fade-up" data-aos-delay="200" id="pro-plan">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4" id="pro-plan-title">
+        Pro Nursery Plan
+      </h3>
+      <p class="text-gray-600 mb-6" id="pro-plan-description">
+        For those who want to dive deeper into the world of plants and gardening.
+      </p>
+      <ul class="text-gray-700 mb-6 space-y-2" id="pro-ul">
+        <li id="pro-f">✔ Everything in the Basic Plan</li>
+        <li id="pro-s">✔ Access to advanced gardening techniques</li>
+        <li id="pro-t">✔ Priority customer support</li>
+      </ul>
+      <div class="text-center mt-auto">
+        <p class="text-4xl font-bold text-orange-600 mb-4" id="pro-price">
+          $25/month
+        </p>
+        <button class="btn-pay bg-green-500 text-white px-6 py-3 rounded-lg shadow-md transition-colors duration-300">
+          Pay Now
+        </button>
+      </div>
+    </div>
+  
+    <!-- Card 3: Premium Plan -->
+    <div class="plan-card relative overflow-hidden rounded-lg shadow-lg bg-purple-300 p-6 transform transition-transform duration-300" data-aos="fade-up" data-aos-delay="300" id="premium-plan">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4" id="premium-plan-title">
+        Premium Nursery Plan
+      </h3>
+      <p class="text-gray-600 mb-6" id="premium-plan-description">
+        For professional gardeners and plant enthusiasts who want the best care.
+      </p>
+      <ul class="text-gray-700 mb-6 space-y-2" id="premium-ul">
+        <li id="premium-f">✔ Everything in the Pro Plan</li>
+        <li id="premium-s">✔ Personalized gardening sessions</li>
+        <li id="premium-t">✔ Lifetime access to exclusive plant care workshops</li>
+      </ul>
+      <div class="text-center mt-auto">
+        <p class="text-4xl font-bold text-purple-600 mb-4" id="premium-price">
+          $50/month
+        </p>
+        <button class="btn-pay bg-green-500 text-white px-6 py-3 rounded-lg shadow-md transition-colors duration-300">
+          Pay Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+   
+      <!-- WhatsApp Chat Button -->
+
+  </section>
+    <footer class="bg-black">
+      <div class="footer-content px-5">
+          <!-- Quick Links Section -->
+        <div>
+          <a href="#" class="navbar-brand flex items-center">
+            <img src="https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/plant-nursery-logo-template-lt8qc346cb8484.webp" alt="Logo" class="logo w-12 h-12 rounded-full">
+            <span class="shop-name ml-2 text-xl font-bold text-white">Nursery</span>
+          </a>
+        </div>
+  
+          <!-- Follow Us Section -->
+          <div class="quick-links">
+            <h2 id="Quick-Links">Quick Links</h2>
+            <ul class="list-unstyled">
+                <li><a href="#home" class="nav-link text-white" id="home1">Home</a></li>
+                <li><a href="#about" class="nav-link text-white" id="about1">About</a></li>
+                <li><a href="#products" class="nav-link text-white" id="product1">Product</a></li>
+                <li><a href="#gallery" class="nav-link text-white" id="gallery1">Gallery</a></li>
+            </ul>
+        </div>
+  
+          <!-- Footer Bottom Section (Copyright) -->
+          <div class="footer-bottom">
+              <div class="footer-center">
+                  <p>&copy; <span id="currentYear"></span> Nursery. All Rights Reserved.</p>
+              </div>
+              <div class="footer-right">
+                  <p class="product-by-visys">Publiced  by VISYS CLOUD TECHNOLOGIES LLC</p>
+              </div>
+          </div>
+      </div>
+  
+
+     
+      </div>
+      <div id="whatsapp-chat" class="whatsapp-chat-btn">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+
+    </footer>
+    <!-- Contact Section -->
+
+  </main>
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.filter-item');
+    const imageGrid = document.getElementById('image-grid');
+    const images = document.querySelectorAll('.filter-item img'); // Select all images
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+    
+        // Reset all button styles
+        buttons.forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+        buttons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-800'));
+    
+        // Highlight active button
+        button.classList.remove('bg-gray-200', 'text-gray-800');
+        button.classList.add('bg-blue-600', 'text-white');
+    
+        // Filter items based on the selected category
+        items.forEach(item => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+    
+// Adjust image grid layout
+if (filter === 'plants' || filter === 'seeds' || filter === 'fertilizers' || filter === 'bulbs') {
+  imageGrid.classList.remove('grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4');
+  imageGrid.classList.add('flex', 'flex-wrap', 'gap-6', 'justify-center', 'items-center'); // Center content
+  // Increase item height and image height on selection
+  items.forEach(item => item.style.minHeight = '500px'); // Item height increase
+  images.forEach(img => img.style.height = '400px'); // Image height increase
+  images.forEach(img => img.style.width = '700px'); // Image width increase
+
+} else {
+  imageGrid.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4');
+  imageGrid.classList.remove('flex', 'flex-wrap', 'justify-center', 'items-center');
+  imageGrid.classList.add('place-items-center'); // Center content when using grid
+  // Reset item height and image height for default grid layout
+  items.forEach(item => item.style.minHeight = '400px'); // Default item height
+  images.forEach(img => img.style.height = '250px'); // Default image height
+}
+
+      });
+    });
+      </script>
+  <script>
+    const whatsappBtn = document.getElementById("whatsapp-chat");
+
+    // Play sound on click
+    const clickSound = new Audio('https://www.soundjay.com/button/beep-07.wav'); // Replace with your own sound if needed
+
+    whatsappBtn.addEventListener("click", () => {
+      // Play click sound
+      clickSound.play();
+
+      // Redirect to WhatsApp with prefilled message
+      const phoneNumber = "+917974833462"; // Change to the desired number
+      const message = "Hello, I am interested in your kitchen accessories!"; // Message to send
+
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    });
+  </script>
+ <script>
+  // Open the popup
+function contactOpenPopup() {
+  document.getElementById('contactpopup').style.display = 'flex';
+}
+
+// Handle form submission (store the redirection URL in sessionStorage)
+function contactHandleSubmit(event) {
+  // Prevent the form from submitting normally
+
+  // Store the initial redirection URL in sessionStorage
+ 
+
+  // Show the thank you message
+  document.getElementById('contactThankYouMessage').style.display = 'block';
+
+  // Simulate form submission after a delay (to show the "Thank you" message)
+  setTimeout(function() {
+      document.getElementById('contactForm').submit();
+  }, 2000); // Delay for showing the thank you message before submission
+}
+
+// Handle form submission and redirection override
+
+
+// Close popup
+function contactClosePopup() {
+  document.getElementById('contactpopup').style.display = 'none';
+}
+
+
+// Get today's date in YYYY-MM-DD format
+const today = new Date().toISOString().split('T')[0];
+
+// Initialize the Flatpickr calendar on the hidden input with minDate set to today's date
+flatpickr("#appointmentDate", {
+minDate: today, // Prevent selecting past dates
+onChange: function(selectedDates, dateStr, instance) {
+  // Update the hidden input field with the selected date
+  let appointmentDateField = document.getElementById('appointmentDateField');
+  appointmentDateField.value = dateStr;
+
+  // Update the email content in the textarea with the selected appointment date
+  let emailBody = document.getElementById('emailBody');
+  emailBody.value = "You have an appointment scheduled on " + dateStr + ".";
+}
+});
+
+// Show the calendar when the button is clicked
+document.getElementById('datePickerButton').addEventListener('click', function() {
+document.getElementById('appointmentDate').click();
+});
+
+// Open the popup
+function openPopup() {
+  document.getElementById('popup').style.display = 'flex';
+}
+
+// Handle form submission
+function handleSubmit(event) {
+  // Prevent the default form submission behavior
+
+  // Show the thank you message
+  document.getElementById('thankYouMessage').style.display = 'block';
+
+  // Simulate a short delay for showing the thank you message
+  setTimeout(function() {
+      // Now submit the form manually
+      document.getElementById('emailForm').submit(); // Trigger form submission
+
+      // Close the popup after a short delay (to show the thank you message)
+      closePopup();
+  }, 3000); // Delay for 3 seconds (you can adjust the time)
+}
+
+// Close popup
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</body>
+
+</html>
